@@ -1,11 +1,7 @@
 {
-  "printWidth": 130, // 最大換行長度
-  "tabWidth": 2, // 儲存後縮排單位
-  "[html][css][less][scss][javascript][typescript][json][jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode", //設定prettier為預設格式化程式
-    "editor.tabSize": 2 // 編輯時縮排單位
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    // Example of regular expression in JSON (note double backslash to escape characters)
+    "indentRainbow.ignoreLinePatterns": [
+        "/[ \t]* [*]/g", // lines begining with <whitespace><space>*
+        "/[ \t]+[/]{2}/g" // lines begininning with <whitespace>//
+    ]
 }
