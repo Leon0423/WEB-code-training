@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Design</title>
-    <style>
-        /* Desktop styles */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        /* Responsive styles */
-        @media only screen and (max-width: 600px) {
-
-            /* Adjust styles for smaller screens */
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Responsive Design</title>
+        <style>
+            /* Desktop styles */
             .container {
-                max-width: 100%;
-                padding: 0 20px;
-                /* Add some padding for smaller screens */
+                max-width: 960px;
+                margin: 0 auto;
             }
-        }
-    </style>
-</head>
 
-<body>
+            /* Responsive styles */
+            @media only screen and (max-width: 600px) {
+                /* Adjust styles for smaller screens */
+                .container {
+                    max-width: 100%;
+                    padding: 0 20px;
+                    /* Add some padding for smaller screens */
+                }
+            }
+        </style>
+    </head>
 
-    <div class="container">
-        <h1>Responsive Design</h1>
-        <p>This is an example of a basic responsive design using CSS.</p>
-    </div>
-
-</body>
-
+    <body>
+        <div class="container">
+            <h1>Responsive Design</h1>
+            <p>This is an example of a basic responsive design using CSS.</p>
+        </div>
+    </body>
 </html>

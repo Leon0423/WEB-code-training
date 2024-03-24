@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<meta charset="utf-8" />
-			<title>CSS 的基本練習</title>
-		</head>
-		<body style="background-color:#cccccc;">
-			<div style="margin-top: 10px;margin-bottom:10px;font-weight:bold;font-size: 24px;">
-				文章第一段落的標題
-			</div>
-			<div style="color: #666">
-				這是<span style="color: red;">第一段</span>的內容
-			</div>
-			<div style="width: 400px; padding:10px; border:1px dashed blue; color: #666">
-				這是<span style="display: none; color: red;">第一段</span>的內容
-				<br/>更多行<br/>更多行<br/>更多行
-				<div style="background-color: yellow;">測試</div>
-			</div>
-			<div style="background-color: yellow;">測試</div>
-		</body>
-	</html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS Box Model 區塊模型</title>
+    </head>
+    <body style="background-color: #cccccc">
+        <!-- 每一個標籤在畫面上都佔據一個方形區塊 -->
+
+        <!-- 區塊填塞 Padding: 區塊的內容和邊框之間的距離 -->
+        <!-- padding:10px; -->
+        <!-- padding-left:10px; -->
+        <!-- padding-top:10px; -->
+        <!-- padding-right:10px; -->
+        <!-- padding-bottom:10px; -->
+
+        <!-- 區塊邊框 Border: 區塊的邊框寬度、樣式、顏色 -->
+        <!-- border:0px; -->
+        <!-- border:3px solid red; -->
+        <!-- border:1px dashed blue; -->
+
+        <!-- 外邊距 Margin: 相鄰區塊之間的距離 -->
+        <!-- margin-bottom:10px; -->
+        <!-- margin-top:10px; -->
+
+        <!-- 背景顏色 Background: 區塊的背景顏色 -->
+        <!-- background-color:blue; -->
+
+        <!-- 區塊的寬度與高度: 利用 width 和 height 設定區塊的尺寸 -->
+        <!-- width:500px; -->
+        <!-- width:50%; -->
+        <!-- height:300px; -->
+        <!-- height:100%; -->
+
+        <!-- 區塊模式 (block) 標籤才能設定尺寸 -->
+        <div style="margin-top: 10px; margin-bottom: 10px; font-weight: bold; font-size: 24px">
+            文章第一段落的標題
+        </div>
+        <div style="color: #666">這是<span style="color: red">第一段</span>的內容</div>
+        <div style="width: 400px; padding: 10px; border: 1px dashed blue; color: #666">
+            這是<span style="display: none; color: red">第一段</span>的內容
+            <!-- <br /> 換行 -->
+            <br />更多行<br />更多行<br />更多行
+            <div style="background-color: yellow">測試</div>
+        </div>
+        <div style="background-color: yellow">測試</div>
+    </body>
+</html>
