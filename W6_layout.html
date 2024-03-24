@@ -1,0 +1,36 @@
+<!-- ! 網頁切版的關鍵思考: 針對 區塊型(block) 標籤做配置 -->
+<!-- > 1. 直向排列 > 橫向排列 -->
+<!-- - 容器: display:flexbox (水平排列) -->
+<!-- - 項目: flex:none; width:width: 100px; OR flex:auto; -->
+<!-- ? 多層次結構: 每個層次都要獨立看待 -->
+<!-- > 2. 水平對齊 -->
+<!-- - 靠右(容器): display:flexbox;justify-content:flex-end -->
+<!-- - 置中(容器): display:flexbox;justify-content:flex-center -->
+<!-- - 靠左(容器): display:flexbox;justify-content:flex-start -->
+<!-- > 3. 垂直對齊 -->
+<!-- - 靠中(容器): display:flexbox;align-items:center -->
+<!-- - 靠下(容器): display:flexbox;align-items:flex-end -->
+<!-- * 完美置中(容器): display:flexbox;justify-content:flex-center;align-items:center -->
+<!-- * 完美置中(項目): flex:none;width:50% -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <title>Flexbox 網頁切版</title>
+        <link rel="stylesheet" type="text/css" href="W6_layouot.css" />
+    </head>
+    <body>
+        <div class="frame">
+            <div class="left">網站標題</div>
+            <div class="right">
+                <div class="item">選項 1</div>
+                <div class="item">選項 2</div>
+                <div class="item">選項 3</div>
+            </div>
+        </div>
+        <div class="welcome">
+            <div class="text">歡迎光臨</div>
+        </div>
+    </body>
+</html>
