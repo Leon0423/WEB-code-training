@@ -1,3 +1,11 @@
+<!-- > <div>: 區塊模式block "自動換行" (無預設樣式)， 像<h1~h5>、<table> -->
+<!-- > <span>: 行內模式inline "不換行" (無預設樣式)， 像<a>、<img> -->
+<!-- - 文字顏色: color:red or color:#色碼 -->
+<!-- - 文字粗細: font-weight:normal, font-weight:bold -->
+<!-- - 文字大小: font-size:16px, font-size: 2em -->
+<!-- - 文字裝飾: text-decoration:underline, text-decoration:line-through -->
+<!-- - 對齊方式: text-align:left, text-align:center -->
+<!-- * 樣式間要用分號 ";" 隔開 -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,18 +13,12 @@
         <title>CSS 的基本練習</title>
     </head>
     <body style="background-color: #cccccc">
-        <!-- <div>: 區塊模式block "自動換行" (無預設樣式)， 像<h1~h5>、<table> -->
-        <!-- <span>: 行內模式inline "不換行" (無預設樣式)， 像<a>、<img> -->
-        <!-- 文字顏色: color:red or color:#色碼 -->
-        <!-- 文字粗細: font-weight:normal, font-weight:bold -->
-        <!-- 文字大小: font-size:16px, font-size: 2em -->
-        <!-- 文字裝飾: text-decoration:underline, text-decoration:line-through -->
-        <!-- 對齊方式: text-align:left, text-align:center -->
-        <!-- 樣式間用分號" ; "隔開 -->
         <div style="font-weight: bold; font-size: 24px">文章第一段落的標題</div>
         <!-- <h1~h5> 會有 -->
         這是第一段的內容<!-- 無預設模式 -->
         <div style="color: #666">今天的<span style="color: red">天氣</span>真是不錯</div>
-        <div style="color: #666">這是<span style="display: none; color: red">第一段</span>的內容</div>
+        <div style="color: #666">
+            這是<span style="display: none; color: red">第一段</span>的內容
+        </div>
     </body>
 </html>
