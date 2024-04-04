@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<title>表單Forms</title>
+	</head>
+	<body>
+		<h1>表單練習</h1>
+		<form>
+			<fieldset>
+				<!-- - <fieldset> 表單框架 -->
+				<legend>個人資訊</legend>
+				<!-- - <legend>表單框架名稱 -->
+				<label>姓名： </label>
+				<input type="text" name="username" size="40" />
+				<!-- - <input> 單行文字方塊 -->
+				<!-- - type="text" 文字格式 -->
+				<!-- - name="(輸入資料屬性)" -->
+				<!-- - size="number" 寬度-->
+				<br />
+				<!-- - <br> Line Break 分到下一行-->
+				<br />
+				<label>年紀: </label>
+				<input type="radio" name="userage" value="age1" />小於18歲
+				<input type="radio" name="userage" value="age2" />19~30歲
+				<input type="radio" name="userage" value="age3" />31~50歲
+				<input type="radio" name="userage" value="age4" />超過50歲
+				<!-- - type="radio" 創建單選按鈕 -->
+				<!-- - name 屬性用於將按鈕分組在一起 -->
+				<!-- - value 屬性指定提交表單時的值 -->
+				<br />
+				<br />
+				<label>您看過那些類型的影片呢？</label>
+				<input type="checkbox" name="uservideo[]" value="video1" />架構
+				<input type="checkbox" name="uservideo[]" value="video2" />屬性
+				<input type="checkbox" name="uservideo[]" value="video3" />項目清單
+				<input type="checkbox" name="uservideo[]" value="video4" />表格
+				<!-- - type="checkbox" 核取方塊(複選框) -->
+				<!-- ! []方括號 多樣的情況需要用到 -->
+				<br />
+				<br />
+				<label>您喜歡哪一些影片呢？</label>
+				<select name="userlike[]" size="4" multiple>
+					<option value="likevideo1">架構</option>
+					<option value="likevideo2">屬性</option>
+					<option value="likevideo3">項目清單</option>
+					<option value="likevideo4">表格</option>
+				</select>
+				<!-- - <select> 標籤創建下拉選單 -->
+				<!-- - <option> 標籤創建選項 -->
+				<!-- - multiple 複選 -->
+			</fieldset>
+			<input type="submit" value="送出" />
+			<!-- - <input> 建立按鈕, <value>(按鈕名稱)提交表單時的值 -->
+			<input type="reset" value="清除" />
+		</form>
+	</body>
+</html>

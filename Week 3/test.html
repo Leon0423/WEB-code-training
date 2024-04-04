@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<title>Flexbox 網頁切版</title>
+	</head>
+	<body>
+		<form action="/submit_form" method="get">
+			<!-- > 表單內容將在此添加 -->
+			<label>Username:</label>
+			<input type="text" id="username" name="username" />
+			<!-- - <input> 標籤用於創建各種類型的輸入字段 -->
+			<!-- - type="text" 創建一個單行文本框 -->
+			<!-- - id 和 name 屬性分別用於標識該字段和提交表單時的參數名稱 -->
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" />
+			<!-- - type="password" 創建一個密碼輸入框，輸入的字符將被隱藏 -->
+
+			<input type="radio" id="male" name="gender" value="male" />
+			<label for="male">Male</label>
+			<input type="radio" id="female" name="gender" value="female" />
+			<label for="female">Female</label>
+			<!-- - type="radio" 創建單選按鈕 -->
+			<!-- - name 屬性用於將按鈕分組在一起 -->
+			<!-- - value 屬性指定提交表單時的值 -->
+
+			<input type="checkbox" id="subscribe" name="subscribe" value="yes" />
+			<label for="subscribe">Subscribe</label>
+			<!-- - type="checkbox" 創建複選框 -->
+
+			<label for="country">Country:</label>
+			<select id="country" name="country">
+				<option value="usa">USA</option>
+				<option value="uk">UK</option>
+				<option value="canada">Canada</option>
+			</select>
+			<!-- - <select> 標籤創建下拉選單 -->
+			<!-- - <option> 標籤創建選項 -->
+
+			<label for="message">Message:</label>
+			<textarea id="message" name="message" rows="4" cols="10"></textarea>
+			<!-- - <textarea> 標籤創建多行文本框 -->
+			<!-- - rows 和 cols 屬性用於指定文本框的行數和列數 -->
+		</form>
+	</body>
+</html>
