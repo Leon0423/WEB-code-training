@@ -1,0 +1,39 @@
+<!-- > HTML DOM(Document Object Model): 把 HTML標籤物件(HTML Element)串接在一起，成為物件結構 -->
+<!-- ? window 物件: HTML DOM 的入口 -->
+<!-- ? screen 物件: 紀錄使用者螢幕資訊 -->
+<!-- ? document 物件: 代表網頁主畫面 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" , content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<title>JavaScript：HTML DOM 核心觀念</title>
+	</head>
+	<body>
+		<script>
+			// 認識內建的 window 物件 (HTML DOM 結構的最上層)
+			console.log(window);
+			// 取得視窗的寬度和高度
+			console.log(window.innerHeight, window.innerWidth);
+			// 透過 screen 物件，取得螢幕尺吋.
+			console.log(window.screen.width, window.screen.height);
+			// 取得網頁列內容
+			console.log(window.location.href);
+			// 更改網址列的內容 (跳轉頁面)
+			// window.location.href = "https://www.google.com/";
+
+			// 認識 document 物件
+			console.log(window.document); // 簡易版
+			console.dir(document); // 詳細版
+			// 取得網頁標題
+			console.log(document.title);
+			// 更改網頁標題
+			document.title = "新的標籤";
+			// 取得 Body 標籤
+			console.log(document.body);
+			// 更改網頁主頁面的內容 (Body 標籤的內文)
+			console.log(document.body.innerHTML);
+			document.body.innerHTML = "Hello HTML DOM";
+		</script>
+	</body>
+</html>
