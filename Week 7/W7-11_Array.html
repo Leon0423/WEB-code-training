@@ -1,0 +1,46 @@
+<!-- > 陣列物件 Array: 按照順序存放其他資料的容器 -->
+<!-- * 建立Array -->
+<!-- - new Array() 或 [] -->
+<!-- - eg: let arr = []; -->
+<!-- * 新增資料 -> push方法 -->
+<!-- - eg: arr.push(3); // 從陣列的最尾端推入(存放資料)-->
+<!-- * 取得資料 -->
+<!-- ! 陣列每個資料都有一個編號 -->
+<!-- - 陣列[編號] -->
+<!-- * 取得陣列長度 -->
+<!-- - eg: 陣列.length -->
+<!-- * 建立陣列物件與資料(建立物件同時，同時建立初始資料) -->
+<!-- ? [資料, 資料, ...] -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<title>JavaScript 流程控制: 陣列物件</title>
+	</head>
+	<body>
+		<script>
+			// 建立陣列物件
+			let grades = [70, 50, 84];
+			grades.push(25);
+			grades.push(100);
+			console.log(grades);
+
+			/*
+			console.log(grades[0]);
+			console.log(grades[1]);
+			console.log(grades[2]);
+			console.log(grades.length);
+            */
+
+			// 利用 for 迴圈，逐一取得陣列中的資料
+			// 算平均數，先算總和
+			let total = 0; // 用來記錄累加的結果
+			for (let i = 0; i < grades.length; i++) {
+				total = total + grades[i];
+			}
+			let avg = total / grades.length;
+			console.log(avg);
+		</script>
+	</body>
+</html>
