@@ -1,0 +1,62 @@
+<!-- > 取得標籤物件: 透過標籤的 ID 屬性建立連結 -->
+<!-- - 1. 在 HTML 想要操作的標籤加上 id 屬性 -->
+<!-- - 2. 在 JavaScript 程式中利用 document.querySelector() 取得標籤物件 -->
+<!-- * 操作標籤物件: -->
+<!-- - 1. 取得標籤物件 -->
+<!-- - 2. 操作標籤物件的 HTML 和 CSS -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<title>JavaScript: HTML DOM 網頁畫面操作</title>
+		<!-- <style>
+			.text {
+				text-decoration: underline;
+				font-weight: bold;
+			}
+		</style> -->
+	</head>
+	<body>
+		<div>
+			<span onclick="changeToAbout();">關於我</span>
+			<span onclick="changeToExps();">學經歷</span>
+		</div>
+		<hr />
+		<div id="about">大家好, 我是name</div>
+		<div id="exps" style="display: none">我是某某高中的學生，志向是軟體工程師</div>
+		<script>
+			function changeToAbout() {
+				// 先取得要操作的標籤
+				let aboutDiv = document.querySelector("#about");
+				let expsDiv = document.querySelector("#exps");
+				// 在對標籤做操作
+				aboutDiv.style.display = "block";
+				expsDiv.style.display = "none";
+			}
+			function changeToExps() {
+				// 先取得要操作的標籤
+				let aboutDiv = document.querySelector("#about");
+				let expsDiv = document.querySelector("#exps");
+				// 在對標籤做操作
+				aboutDiv.style.display = "none";
+				expsDiv.style.display = "block";
+			}
+		</script>
+		<!--
+		<h3>HTML DOM 畫面操作</h3>
+		<div id="content">練習網頁畫面的操作</div>
+		<button onclick="change();">點我</button>
+		<script>
+			function change() {
+				// 取得標籤物件
+				let elem = document.querySelector("#content");
+				// 操作標籤物件
+				elem.innerHTML = "對特定的標籤做操作";
+				elem.className = "text";
+				elem.style.fontSize = "30px"; // font - size: 30px
+				elem.style.color = "red";
+			}
+		</script> -->
+	</body>
+</html>
