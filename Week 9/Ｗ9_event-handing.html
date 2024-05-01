@@ -17,7 +17,6 @@
 		<style>
 			.btn {
 				background-color: #ffcccc;
-				font-size: 20px;
 				padding: 8px;
 				border-radius: 5px;
 				cursor: pointer; /* 滑鼠圖示變手指頭 */
@@ -28,18 +27,18 @@
 		<h3>事件處理的練習</h3>
 		<span
 			class="btn"
-			onmouseover="over('this');"
-			onmouseout="out('this');"
-			onmousedown="down('this');"
-			onmouseup="up('this');"
+			onmouseover="over(this);"
+			onmouseout="out(this);"
+			onmousedown="down(this);"
+			onmouseup="up(this);"
 			>點我</span
 		>
 		<span
 			class="btn"
-			onmouseover="over('this');"
-			onmouseout="out('this');"
-			onmousedown="down('this');"
-			onmouseup="up('this');"
+			onmouseover="over(this);"
+			onmouseout="out(this);"
+			onmousedown="down(this);"
+			onmouseup="up(this);"
 			>第二個按鈕</span
 		>
 		<!-- <button
@@ -50,19 +49,18 @@
 			onmouseup="console.log('滑鼠放開');"
 			>點我
 		</button> -->
-
 		<script>
-			function over(elem) {
-				elem.style.background = "#ddc";
-			}
-			function out(elem) {
-				elem.style.background = "#ffcccc";
+			function up(elem) {
+				elem.style.fontWeight = "normal";
 			}
 			function down(elem) {
 				elem.style.fontWeight = "bold";
 			}
-			function up(elem) {
-				elem.style.fontWeight = "normal";
+			function over(elem) {
+				elem.style.background = "#ddaaaa";
+			}
+			function out(elem) {
+				elem.style.background = "#ffcccc";
 			}
 		</script>
 	</body>
