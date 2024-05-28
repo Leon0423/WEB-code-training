@@ -1,0 +1,188 @@
+/* styles.css */
+body {
+	font-family: "Arial", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+	transition: background-color 0.3s;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+	text-align: center;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s, transform 0.3s;
+}
+
+header:hover {
+	transform: scale(1.02);
+}
+
+nav a {
+	color: #fff;
+	margin: 0 1rem;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s;
+}
+
+nav a:hover {
+	text-decoration: underline;
+	color: #ffeb3b;
+}
+
+main {
+	padding: 2rem 1rem;
+	max-width: 900px;
+	margin: 0 auto;
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	animation: fadeIn 0.5s;
+}
+
+h2 {
+	border-bottom: 2px solid #333;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	animation: fadeIn 1s;
+}
+
+.tabs {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+}
+
+.hidden {
+	display: none;
+}
+
+.tab-button {
+	color: #fff;
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 1rem;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+.tab-button.active {
+	transform: scale(1.05);
+}
+
+.tab-button.all {
+	background-color: #007bff;
+}
+
+.tab-button.all:hover,
+.tab-button.all.active {
+	background-color: #0056b3;
+}
+
+.tab-button.frontend {
+	background-color: #28a745;
+}
+
+.tab-button.frontend:hover,
+.tab-button.frontend.active {
+	background-color: #218838;
+}
+
+.tab-button.backend {
+	background-color: #ffc107;
+}
+
+.tab-button.backend:hover,
+.tab-button.backend.active {
+	background-color: #e0a800;
+}
+
+.tab-button.fullstack {
+	background-color: #dc3545;
+}
+
+.tab-button.fullstack:hover,
+.tab-button.fullstack.active {
+	background-color: #c82333;
+}
+
+.toggle-button {
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 1rem;
+	transition: background-color 0.3s, transform 0.2s;
+	margin-bottom: 1rem;
+}
+
+.toggle-button:hover {
+	background-color: #555;
+	transform: scale(1.05);
+}
+
+.toggle-button:active {
+	transform: scale(0.95);
+}
+
+.project-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.project-list li {
+	background-color: #f9f9f9;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-list li:hover {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transform: scale(1.02);
+}
+
+.project-list a {
+	text-decoration: none;
+	color: #007bff;
+	font-weight: bold;
+	transition: color 0.3s;
+}
+
+.project-list a:hover {
+	text-decoration: underline;
+	color: #0056b3;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
