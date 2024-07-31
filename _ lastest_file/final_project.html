@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Code Copy Example</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		/>
+		<style>
+			body {
+				display: flex;
+				margin: 0;
+				font-family: Arial, sans-serif;
+				transition: background-color 0.3s, color 0.3s;
+			}
+
+			.sidebar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 200px;
+				height: 100%;
+				background-color: #333;
+				color: white;
+				padding-top: 20px;
+				transition: background-color 0.3s, left 0.3s;
+			}
+
+			.sidebar a {
+				display: block;
+				color: white;
+				padding: 10px;
+				text-decoration: none;
+				transition: background-color 0.3s;
+			}
+
+			.sidebar a:hover {
+				background-color: #575757;
+			}
+
+			.content {
+				margin-left: 200px;
+				padding: 20px;
+				width: calc(100% - 200px);
+				transition: margin-left 0.3s, width 0.3s;
+			}
+
+			.dark-mode {
+				background-color: #121212;
+				color: white;
+			}
+
+			.dark-mode .sidebar {
+				background-color: #1e1e1e;
+			}
+
+			.dark-mode .sidebar a {
+				color: #bbb;
+			}
+
+			.dark-mode .sidebar a:hover {
+				background-color: #333;
+			}
+
+			.toggle-button {
+				position: fixed;
+				top: 10px;
+				right: 10px;
+				padding: 10px;
+				background-color: #333;
+				color: white;
+				border: none;
+				cursor: pointer;
+				transition: background-color 0.3s;
+				z-index: 1000;
+			}
+
+			.toggle-button:hover {
+				background-color: #575757;
+			}
+
+			.code-block {
+				position: relative;
+				margin-top: 20px;
+			}
+
+			.copy-button {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				padding: 5px;
+				background-color: transparent;
+				color: #333;
+				border: none;
+				cursor: pointer;
+				transition: color 0.3s, transform 0.2s;
+				z-index: 1;
+			}
+
+			.dark-mode .copy-button {
+				color: white;
+			}
+
+			.copy-button i {
+				font-size: 1.2em;
+			}
+
+			.copy-button:hover {
+				color: #4caf50;
+			}
+
+			.copy-button:active {
+				transform: scale(0.9);
+			}
+
+			.copy-button[title]:hover::after {
+				content: attr(title);
+				position: absolute;
+				top: -25px;
+				right: 0;
+				background: #333;
+				color: white;
+				padding: 5px 10px;
+				border-radius: 3px;
+				white-space: nowrap;
+				font-size: 0.8em;
+			}
+
+			pre {
+				background-color: #f4f4f4;
+				padding: 15px;
+				border-radius: 5px;
+				overflow: auto;
+				transition: background-color 0.3s;
+			}
+
+			.dark-mode pre {
+				background-color: #1e1e1e;
+			}
+
+			.description {
+				margin-bottom: 5px;
+				font-style: italic;
+				color: #555;
+			}
+
+			.dark-mode .description {
+				color: #bbb;
+			}
+
+			.copy-success {
+				color: #4caf50 !important;
+			}
+
+			@media (max-width: 780px) {
+				.sidebar {
+					left: -200px; /* 隱藏側邊欄 */
+				}
+				.content {
+					margin-left: 0;
+					width: 100%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sidebar">
+			<a href="#page1">頁面1</a>
+			<a href="#page2">頁面2</a>
+			<a href="#page3">頁面3</a>
+			<a href="#page4">頁面4</a>
+			<a href="#page5">頁面5</a>
+		</div>
+
+		<div class="content">
+			<button class="toggle-button" onclick="toggleDarkMode()">切換Dark Mode</button>
+
+			<h1>首頁</h1>
+			<p>歡迎來到我的網站！</p>
+
+			<div class="code-block">
+				<div class="description">這段程式碼用於在控制台輸出訊息。</div>
+				<pre><code>console.log('這是頁面1的程式碼');</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">這段程式碼定義了一個簡單的加法函數。</div>
+				<pre><code>function add(a, b) { return a + b; }</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">這段程式碼遍歷數組並在控制台輸出每個元素。</div>
+				<pre><code>const data = [1, 2, 3, 4]; data.forEach(item => console.log(item));</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">這段程式碼使用 while 迴圈計數並在控制台輸出。</div>
+				<pre><code>let count = 0; while (count < 5) { console.log(count); count++; }</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+		</div>
+
+		<script>
+			function toggleDarkMode() {
+				document.body.classList.toggle("dark-mode");
+			}
+
+			document.querySelectorAll(".copy-button").forEach((button) => {
+				button.addEventListener("click", () => {
+					const codeBlock = button.previousElementSibling.querySelector("code");
+					const codeText = codeBlock.innerText;
+
+					navigator.clipboard
+						.writeText(codeText)
+						.then(() => {
+							button.classList.add("copy-success");
+							button.innerHTML = '<i class="fa fa-check"></i>'; // 修改为打勾图标
+							setTimeout(() => {
+								button.classList.remove("copy-success");
+								button.innerHTML = '<i class="fa fa-copy"></i>';
+							}, 2000);
+						})
+						.catch((err) => {
+							console.error("Failed to copy: ", err);
+						});
+				});
+			});
+		</script>
+	</body>
+</html>
