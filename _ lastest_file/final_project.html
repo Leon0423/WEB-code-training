@@ -8,6 +8,10 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css"
+		/>
 		<style>
 			body {
 				display: flex;
@@ -83,7 +87,7 @@
 
 			.code-block {
 				position: relative;
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 
 			.copy-button {
@@ -136,6 +140,10 @@
 				transition: background-color 0.3s;
 			}
 
+			code {
+				font-size: 15px;
+			}
+
 			.dark-mode pre {
 				background-color: #1e1e1e;
 			}
@@ -167,40 +175,107 @@
 	</head>
 	<body>
 		<div class="sidebar">
-			<a href="#page1">頁面1</a>
-			<a href="#page2">頁面2</a>
-			<a href="#page3">頁面3</a>
-			<a href="#page4">頁面4</a>
-			<a href="#page5">頁面5</a>
+			<a href="#page1">與硬體聯繫</a>
+			<a href="#page2">設定setting</a>
+			<a href="#page3">encoder模式</a>
+			<a href="#page4">控制馬達轉動</a>
 		</div>
 
 		<div class="content">
 			<button class="toggle-button" onclick="toggleDarkMode()">切換Dark Mode</button>
 
-			<h1>首頁</h1>
-			<p>歡迎來到我的網站！</p>
+			<h1>FTC馬達篇 (Motors)</h1>
+			<p>這裡是介紹馬達的各種code(Java)</p>
 
+			<!-- - page1 與硬體聯繫 -->
+			<h2 id="page1">與硬體(hardware)的聯繫</h2>
 			<div class="code-block">
-				<div class="description">這段程式碼用於在控制台輸出訊息。</div>
-				<pre><code>console.log('這是頁面1的程式碼');</code></pre>
+				<div class="description">創建一顆直流馬達物件(類似於建立變數)</div>
+				<pre><code>DcMotorEx motor;</code></pre>
 				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
 			</div>
 
 			<div class="code-block">
-				<div class="description">這段程式碼定義了一個簡單的加法函數。</div>
-				<pre><code>function add(a, b) { return a + b; }</code></pre>
+				<div class="description">建立馬達(程式上)與硬體的聯繫</div>
+				<pre><code>motor = hardwareMap.get(DcMotorEx.class, "motor");</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<!-- - page2 設定setting -->
+			<h2 id="page2">設定setting</h2>
+			<div class="code-block">
+				<div class="description">設定馬達正轉方向</div>
+				<pre><code>motor.setDirection(DcMotorSimple.Direction.FORWARD);</code></pre>
 				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
 			</div>
 
 			<div class="code-block">
-				<div class="description">這段程式碼遍歷數組並在控制台輸出每個元素。</div>
-				<pre><code>const data = [1, 2, 3, 4]; data.forEach(item => console.log(item));</code></pre>
+				<div class="description">設定馬達反轉方向</div>
+				<pre><code>motor.setDirection(DcMotorSimple.Direction.REVERSE);</code></pre>
 				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
 			</div>
 
 			<div class="code-block">
-				<div class="description">這段程式碼使用 while 迴圈計數並在控制台輸出。</div>
-				<pre><code>let count = 0; while (count < 5) { console.log(count); count++; }</code></pre>
+				<div class="description">設定馬達煞車 (停止轉動時馬達鎖死)</div>
+				<pre><code>motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">設定馬達滑動 (停止轉動時馬達可轉動)</div>
+				<pre><code>motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<!-- - page3 encoder模式 -->
+			<h2 id="page3">encoder模式</h2>
+			<div class="code-block">
+				<div class="description">1. 重置馬達encoder (數值回歸0)</div>
+				<pre><code>motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">2. 用於單純量測馬達encoder</div>
+				<pre><code>motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">3. 設定馬達轉動模式為轉角度 // 而不是以數值驅動</div>
+				<pre><code>motor.setMode(DcMotor.RunMode.RUN_TO_POSITION);</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">4. 希望馬達轉速較穩定</div>
+				<pre><code>motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<!-- - page4 控制馬達轉動 -->
+			<h2 id="page4">控制馬達轉動</h2>
+			<div class="code-block">
+				<div class="description">給定馬達power[-1, 1] (較常用)</div>
+				<pre><code>motor.setPower();</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">給定馬達速度(常用於需要高精確度轉速的馬達，例如飛輪)</div>
+				<pre><code>motor.setVelocity();</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">設定馬達目標轉動到的位置(用於手臂控制)</div>
+				<pre><code>motor.setTargetPosition();</code></pre>
+				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
+			</div>
+
+			<div class="code-block">
+				<div class="description">回傳馬達目前位置</div>
+				<pre><code>motor.getCurrentPosition();</code></pre>
 				<button class="copy-button" title="Copy"><i class="fa fa-copy"></i></button>
 			</div>
 		</div>
@@ -219,7 +294,7 @@
 						.writeText(codeText)
 						.then(() => {
 							button.classList.add("copy-success");
-							button.innerHTML = '<i class="fa fa-check"></i>'; // 修改为打勾图标
+							button.innerHTML = '<i class="fa fa-check"></i>';
 							setTimeout(() => {
 								button.classList.remove("copy-success");
 								button.innerHTML = '<i class="fa fa-copy"></i>';
