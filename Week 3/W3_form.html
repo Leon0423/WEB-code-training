@@ -12,8 +12,8 @@
 				<!-- - <fieldset> 表單框架 -->
 				<legend>個人資訊</legend>
 				<!-- - <legend>表單框架名稱 -->
-				<label>姓名： </label>
-				<input type="text" name="username" size="40" />
+				<label for="username">姓名： </label>
+				<input type="text" name="username" id="username" size="40" />
 				<!-- - <input> 單行文字方塊 -->
 				<!-- - type="text" 文字格式 -->
 				<!-- - name="(輸入資料屬性)" -->
@@ -21,27 +21,31 @@
 				<br />
 				<!-- - <br> Line Break 分到下一行-->
 				<br />
-				<label>年紀: </label>
-				<input type="radio" name="userage" value="age1" />小於18歲
-				<input type="radio" name="userage" value="age2" />19~30歲
-				<input type="radio" name="userage" value="age3" />31~50歲
-				<input type="radio" name="userage" value="age4" />超過50歲
+				<label for="age1">年紀: </label>
+				<input type="radio" name="userage" id="age1" value="age1" />小於18歲
+				<input type="radio" name="userage" id="age2" value="age2" />19~30歲
+				<input type="radio" name="userage" id="age3" value="age3" />31~50歲
+				<input type="radio" name="userage" id="age4" value="age4" />超過50歲
 				<!-- - type="radio" 創建單選按鈕 -->
 				<!-- - name 屬性用於將按鈕分組在一起 -->
 				<!-- - value 屬性指定提交表單時的值 -->
 				<br />
 				<br />
 				<label>您看過那些類型的影片呢？</label>
-				<input type="checkbox" name="uservideo[]" value="video1" />架構
-				<input type="checkbox" name="uservideo[]" value="video2" />屬性
-				<input type="checkbox" name="uservideo[]" value="video3" />項目清單
-				<input type="checkbox" name="uservideo[]" value="video4" />表格
+				<input type="checkbox" name="uservideo[]" id="video1" value="video1" />
+				<label for="video1">架構</label>
+				<input type="checkbox" name="uservideo[]" id="video2" value="video2" />
+				<label for="video2">屬性</label>
+				<input type="checkbox" name="uservideo[]" id="video3" value="video3" />
+				<label for="video3">項目清單</label>
+				<input type="checkbox" name="uservideo[]" id="video4" value="video4" />
+				<label for="video4">表格</label>
 				<!-- - type="checkbox" 核取方塊(複選框) -->
 				<!-- ! []方括號 多樣的情況需要用到 -->
 				<br />
 				<br />
-				<label>您喜歡哪一些影片呢？</label>
-				<select name="userlike[]" size="4" multiple>
+				<label for="userlike">您喜歡哪一些影片呢？</label>
+				<select name="userlike[]" id="userlike" size="4" multiple>
 					<option value="likevideo1">架構</option>
 					<option value="likevideo2">屬性</option>
 					<option value="likevideo3">項目清單</option>

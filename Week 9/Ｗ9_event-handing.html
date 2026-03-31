@@ -21,6 +21,10 @@
 				padding: 8px;
 				border-radius: 5px;
 				cursor: pointer; /* 滑鼠圖示變手指頭 */
+				user-select: none; /* 防止文字被選取 */
+				-webkit-user-select: none; /* Safari 瀏覽器支援 */
+				-moz-user-select: none; /* Firefox 瀏覽器支援 */
+				-ms-user-select: none; /* IE/Edge 瀏覽器支援 */
 			}
 		</style>
 	</head>
@@ -48,7 +52,6 @@
 			onmouseout="console.log('滑鼠移出');"
 			onmousedown="console.log('滑鼠按住');"
 			onmouseup="console.log('滑鼠放開');"
-			>點我
 		</button> -->
 
 		<script>
